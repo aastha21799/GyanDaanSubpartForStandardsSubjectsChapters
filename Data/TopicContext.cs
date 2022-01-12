@@ -6,17 +6,22 @@ namespace Data
 {
     public class TopicContext : DbContext
     {
+        public TopicContext(DbContextOptions<TopicContext> options)
+            :base(options)
+        {
+            //Can disable tracking if we are not doing anything with the retreived data
+            //See the get apis
+            //They fetch the data but don't make any changes to it
+            //Later on tracking behaviour needs to be added and this line needs to be removed
+            //Learn more about tracking behaviour
+            //TBD
+            ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
+        }
+        
         public DbSet<Standard> Standards { get; set; }
         public DbSet<Subject> Subjects { get; set; }
         public DbSet<Topic> Topics { get; set; }
         public DbSet<StandardSubject> StandardSubjects { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(
-                    "Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = LatestTable04;"
-                );
-        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
