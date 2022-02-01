@@ -7,9 +7,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Data;
 using Microsoft.EntityFrameworkCore;
-
+using WebApplication1.Domain;
 
 namespace WebApplication1
 {
@@ -26,7 +25,7 @@ namespace WebApplication1
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<TopicContext>(opt =>
+            services.AddDbContext<Context>(opt =>
                 opt.UseSqlServer(Configuration.GetConnectionString("DatabaseConnectionString"))
                    .EnableSensitiveDataLogging());
         }
@@ -52,7 +51,7 @@ namespace WebApplication1
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Standards}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

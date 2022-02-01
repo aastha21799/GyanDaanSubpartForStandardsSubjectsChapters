@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "ClassLibrary1\Dom
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{9B481F10-6925-46DD-9102-A7628D24A43A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{12B6B218-A0C7-46BC-A9AB-1F57216B929B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{12B6B218-A0C7-46BC-A9AB-1F57216B929B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,0 +1,36 @@
+﻿@model WebApplication1.Domain.Chapter
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Chapter</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.chapterName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.chapterName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.level)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.level)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.standardSubject)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.standardSubject.Id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
